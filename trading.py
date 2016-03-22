@@ -33,7 +33,7 @@ def trade(events, strategy, execution):
 
 
 if __name__ == "__main__":
-    heartbeat = 0.3   # Half a second between polling
+    heartbeat = 0.5   # Half a second between polling
     events = Queue.Queue()
 
     # Trade 10000 units of EUR/USD

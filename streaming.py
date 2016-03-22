@@ -1,6 +1,8 @@
 import requests
 import json
 import pdb
+import pprint
+
 
 from event import TickEvent
 
@@ -44,10 +46,13 @@ class StreamingForexPrices(object):
                     print("Caught exception when converting message into json\n" + str(e))
                     return
                 if "instrument" in msg or "tick" in msg:
-                    print(msg)
                     instrument = msg["tick"]["instrument"]
                     time = msg["tick"]["time"]
                     bid = msg["tick"]["bid"]
                     ask = msg["tick"]["ask"]
-                    tev = TickEvent(instrument, time, bid, ask)
+                    spread = round(msg["tick"]["ask"] - msg["tick"]["bid"], 10)
+                    msg['tick']['spread'] = spread
+                    #print(msg)
+                    #pdb.set_trace()
+                    tev = TickEvent(instrument, time, bid, ask, spread)
                     self.events_queue.put(tev)

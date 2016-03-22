@@ -3,12 +3,13 @@ class Event(object):
 
 
 class TickEvent(Event):
-    def __init__(self, instrument, time, bid, ask):
+    def __init__(self, instrument, time, bid, ask, spread):
         self.type = 'TICK'
         self.instrument = instrument
         self.time = time
         self.bid = bid
         self.ask = ask
+        self.spread = spread
 
 
 class OrderEvent(Event):
