@@ -63,7 +63,7 @@ class TestRandomStrategy(object):
                 action = self.crazy_signal(self.range)
                 if action:
                     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-                    print("$$$$$$$$$$$$$$  SINAL %s $$$$$$$$$$$$$$$$$$$$" % action)
+                    print("$$$$$$$$$$$$$$$$  SINAL %s $$$$$$$$$$$$$$$$$$$$" % action)
                     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
                 print(self.range)
             else:
